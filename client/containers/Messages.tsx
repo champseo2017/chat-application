@@ -1,5 +1,5 @@
 function MessagesContainer() {
-  return <p>Messages</p>;
+  return <p>Messages Container</p>;
 }
 
 export default MessagesContainer;

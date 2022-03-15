@@ -4,6 +4,7 @@ import { useSockets } from "../context/socket.context";
 
 function RoomsContainer() {
   const { socket, roomId, rooms } = useSockets();
+  console.log('rooms', rooms)
   const newRoomRef = useRef(null);
   function handleCreateRoom() {
     // get the room name
@@ -20,6 +21,9 @@ function RoomsContainer() {
         <input ref={newRoomRef} type="text" placeholder="Room name" />
         <button onClick={handleCreateRoom}>CREATE ROOM</button>
       </div>
+      {Object.keys(rooms).map((key) => {
+        return <div key={key}>{key}</div>;
+      })}
     </nav>
   );
 }
